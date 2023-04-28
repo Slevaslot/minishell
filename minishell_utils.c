@@ -136,7 +136,7 @@ void	error(t_data *data)
 
 void	not_find(char **mycmdargs)
 {
-	ft_putstr_fd("pipex: command not found: ", 2);
+	ft_putstr_fd("minishell: command not found: ", 2);
 	if (mycmdargs[0])
 	{
 		ft_putstr_fd(mycmdargs[0], 2);
