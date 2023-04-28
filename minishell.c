@@ -107,6 +107,15 @@ void	process(char *prompt, t_data *data)
 		waitpid(data->pid[i], NULL, 0);
 }
 
+void	builtins(char *line, t_data *data)
+{
+	if (!strncmp(line, "env", 3))
+		while(*data->envp++)
+			printf("%s", *data->envp);
+	else
+		return ;
+}
+
 int	main(int ac, char **av, char **envp)
 {
 	t_data	data;
@@ -114,9 +123,9 @@ int	main(int ac, char **av, char **envp)
 	char *line;
 	(void)ac;
 	(void)av;
-	data.envp = envp;
 	ft_memset(&data, 0, sizeof(t_data));
 	data.prev = -1;
+	data.envp = envp;
 	printf("%s : ", getenv("PWD"));
 
 	while(1)
@@ -124,11 +133,13 @@ int	main(int ac, char **av, char **envp)
 		line = readline(buf);
 		if (!strncmp(line, "exit", 5))
 			break ;
+		builtins(line, &data);
 		if (check_line(line) == 1)
 			printf("Error check_line.\n");
-		else if (line != NULL) {
+		else if (line != NULL)
+		{
 			printf("%s : ", getenv("PWD"));
-		exec_process(&data, line);
+			exec_process(&data, line);
 		// process(line, &data);
 		}
 	}
