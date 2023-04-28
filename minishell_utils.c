@@ -143,5 +143,5 @@ void	not_find(char **mycmdargs)
 	}
 	ft_freetab(mycmdargs);
 	ft_putstr_fd("\n", 2);
-	exit(EXIT_FAILURE);
+	// exit(EXIT_FAILURE);
 }
