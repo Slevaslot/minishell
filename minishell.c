@@ -133,7 +133,7 @@ int	main(int ac, char **av, char **envp)
 		line = readline(buf);
 		if (!strncmp(line, "exit", 5))
 			break ;
-		builtins(line, &data);
+		// builtins(line, &data);
 		if (check_line(line) == 1)
 			printf("Error check_line.\n");
 		else if (line != NULL)
