@@ -1,20 +1,13 @@
+PROG	= minishell
 
-PROG	= pipex
+SRCS 	= minishell.c \
+		minishell_utils.c \
+		get_next_line/get_next_line.c \
+		get_next_line/get_next_line_utils.c \
 
-
-SRCS 	= pipex.c pipex_utils.c ft_split.c ft_substr.c check_cmd.c
-OBJS 	= ${SRCS:.c=.o}
-#MAIN	= pipex.c
-
-SRCS_B	=	pipex_bonuss/pipex_bonus.c \
-		pipex_bonuss/pipex_utils_bonus.c \
-		pipex_bonuss/here_doc.c \
-		pipex_bonuss/get_next_line/get_next_line.c \
-		pipex_bonuss/get_next_line/get_next_line_utils.c \
-
-LIBS = pipex_bonuss/libft/libft.a
-OBJS_B	= ${SRCS_B:.c=.o}
-PROG_B = minishell
+LIBS = libft/libft.a
+OBJS 	= ${SRCS:.c=.o} ${SRCS_LIBFT:.c=.o}
+PROG_B = minishell_bonus
 
 CC 		= cc
 CFLAGS 	= -Wall -Wextra -Werror -g3
@@ -22,11 +15,12 @@ CFLAGS 	= -Wall -Wextra -Werror -g3
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-all: 		${PROG_B}
+all: 		${PROG}
 
-${PROG_B}:	${OBJS_B}
-					@make -C pipex_bonuss/
-					@echo "minishell Compiled!\n"
+${PROG}:	${OBJS}
+					@make -C libft/
+					@cc ${OBJS} ${LIBS} -o ${PROG} -lreadline
+					@echo "\nMinishell compiled!\n"
 
 clean:
 
@@ -42,3 +36,4 @@ re:			fclean all
 re_bonus:	fclean bonus
 
 .PHONY: all clean fclean re bonus
+
