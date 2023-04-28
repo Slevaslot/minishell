@@ -45,6 +45,23 @@ void	second_part_dupnclose(int i, t_data *data)
 	}
 }
 
+int check_line(char *line)
+{
+	int i = -1;
+	int quotes = 0;
+	int dblquotes = 0;
+	while (line[++i])
+	{
+		if (line[i] == '\'')
+			quotes++;
+		if (line[i] == '"')
+			dblquotes++;
+	}
+	if (quotes % 2 == 1 || dblquotes % 2 == 1)
+		return (1);
+	return (0);
+}
+
 void	ft_freetab(char **str)
 {
 	int		i;

@@ -51,5 +51,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 void	here_doc(char *argv, t_data *data);
 void	second_part_dupnclose(int i, t_data *data);
 void	close_fd(int *fd);
+int check_line(char *line);
 
 #endif
