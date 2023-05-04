@@ -107,19 +107,26 @@ void	process(char *prompt, t_data *data)
 		waitpid(data->pid[i], NULL, 0);
 }
 
-void	builtins(char *line, t_data *data)
+int	builtins(char *line, t_data *data)
 {
 	if (!strncmp(line, "env", 3))
 		while(*data->envp++)
-			printf("%s", *data->envp);
+			return (printf("%s \n", *data->envp));
+	if (!ft_strncmp(line, "cd", 2))
+	{
+		if (ft_strlen(line) > 3)
+			return (chdir(line + 3));
+		else
+			return (chdir(getenv("HOME")));
+	}
 	else
-		return ;
+		return -1;
 }
 
 int	main(int ac, char **av, char **envp)
 {
 	t_data	data;
-	char buf[100];
+	char buf[1000];
 	char *line;
 	(void)ac;
 	(void)av;
@@ -127,16 +134,18 @@ int	main(int ac, char **av, char **envp)
 	data.prev = -1;
 	data.envp = envp;
 	printf("%s : ", getenv("PWD"));
-
 	while(1)
-	{
+	{	
 		line = readline(buf);
+		if (line == NULL)
+			break ; 
 		if (!strncmp(line, "exit", 5))
 			break ;
-		// builtins(line, &data);
+		// if (builtins(line, &data) != -1 )
+		// 	printf("builtused");
 		if (check_line(line) == 1)
 			printf("Error check_line.\n");
-		else if (line != NULL)
+		else if (line != NULL && builtins(line, &data) == -1)
 		{
 			printf("%s : ", getenv("PWD"));
 			exec_process(&data, line);
