@@ -139,12 +139,13 @@ void	prompt()
 	getcwd(buf, sizeof(buf));
 	i = ft_strlen(buf);
 	buf[i] = '\0';
-	printf("\x1b[32m->\x1b[0m ");
+	printf("\033[0;32m\u2192\033[0m");
+	printf("  ");
 	while(buf[--i] != '/')
 		;
 	while(buf[i++])
-		printf("%c", buf[i]);
-	printf(" : ");
+		printf("\033[1;36m%c\033[0m", buf[i]);
+	printf("\033[1;34m minishell: \033[0m");
 }
 
 int	main(int ac, char **av, char **envp)
