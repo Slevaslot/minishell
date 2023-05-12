@@ -135,22 +135,16 @@ void	prompt()
 	int i;
 	// char *str;
 	char buf[1000];
-	pid_t	pid_child;
 
-	pid_child = fork();
-	if (pid_child == 0)
-	{
-		getcwd(buf, sizeof(buf));
-		i = ft_strlen(buf);
-		buf[i] = '\0';
-		printf("\x1b[32m->\x1b[0m ");
-		while(buf[--i] != '/')
-			;
-		while(buf[i++])
-			printf("%c", buf[i]);
-		printf(" : ");
-	}
-	waitpid(pid_child, NULL, 0);
+	getcwd(buf, sizeof(buf));
+	i = ft_strlen(buf);
+	buf[i] = '\0';
+	printf("\x1b[32m->\x1b[0m ");
+	while(buf[--i] != '/')
+		;
+	while(buf[i++])
+		printf("%c", buf[i]);
+	printf(" : ");
 }
 
 int	main(int ac, char **av, char **envp)
