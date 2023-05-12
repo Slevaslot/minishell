@@ -39,6 +39,7 @@ typedef struct data
 	char	*fd_ch;
 	char	*fd_in_ch;
 	char **envp;
+	char	*line;
 }t_data;
 
 void	exec_process(t_data *data, char *str);
@@ -53,5 +54,8 @@ void	here_doc(char *argv, t_data *data);
 void	second_part_dupnclose(int i, t_data *data);
 void	close_fd(int *fd);
 int check_line(char *line);
+//builtins
+int	my_env(t_data *data);
+int	my_cd(t_data *data);
 
 #endif

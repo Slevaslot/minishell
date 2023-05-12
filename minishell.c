@@ -107,18 +107,12 @@ void	process(char *prompt, t_data *data)
 		waitpid(data->pid[i], NULL, 0);
 }
 
-int	builtins(char *line, t_data *data)
+int	is_builtins(char *line, t_data *data)
 {
 	if (!strncmp(line, "env", 3))
-		while(*data->envp++)
-				return (printf("%s \n", *data->envp)); // probleme ici
+		return (my_env(data));
 	if (!ft_strncmp(line, "cd", 2))
-	{
-		if (ft_strlen(line) > 3)
-			return (chdir(line + 3));
-		else
-			return (chdir(getenv("HOME")));
-	}
+		return (my_cd(data));
 	else
 		return -1;
 }
@@ -139,24 +133,30 @@ int	parsing (t_data *data, char *line)
 void	prompt()
 {
 	int i;
-	char *str;
+	// char *str;
+	char buf[1000];
+	pid_t	pid_child;
 
-	str = getenv("PWD");
-	i = ft_strlen(str);
-	str[i] = '\0';
-	printf("\x1b[32m->\x1b[0m ");
-	while(str[--i] != '/')
-		;
-	while(str[i++])
-		printf("%c", str[i]);
-	printf(" : ");
+	pid_child = fork();
+	if (pid_child == 0)
+	{
+		getcwd(buf, sizeof(buf));
+		i = ft_strlen(buf);
+		buf[i] = '\0';
+		printf("\x1b[32m->\x1b[0m ");
+		while(buf[--i] != '/')
+			;
+		while(buf[i++])
+			printf("%c", buf[i]);
+		printf(" : ");
+	}
+	waitpid(pid_child, NULL, 0);
 }
 
 int	main(int ac, char **av, char **envp)
 {
 	t_data	data;
 	char buf[1000];
-	char *line;
 	(void)ac;
 	(void)av;
 	ft_memset(&data, 0, sizeof(t_data));
@@ -165,19 +165,21 @@ int	main(int ac, char **av, char **envp)
 	prompt();
 	while(1)
 	{
-		line = readline(buf);
-		if (line == NULL)
+		data.line = readline(buf);
+		if (data.line == NULL)
 			break ;
-		if (!strncmp(line, "exit", 5))
-			break ;
+		if (!strncmp(data.line, "exit", 5))
+		{
+			return (0);
+		}
 		// if (builtins(line, &data) != -1 )
 		// 	printf("builtused");
-		if (check_line(line) == 1)
+		if (check_line(data.line) == 1)
 			printf("Error check_line.\n");
-		else if (line != NULL && builtins(line, &data) == -1)
+		else if (data.line != NULL && is_builtins(data.line, &data) == -1)
 		{
 			// if (parsing(&data, line) == 0)
-			exec_process(&data, line);
+			exec_process(&data, data.line);
 			// else
 			// process(line, &data);
 		}
