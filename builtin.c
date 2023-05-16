@@ -2,8 +2,9 @@
 
 int	my_env(t_data *data)
 {
-	while(*data->envp++)
-			return (printf("%s \n", *data->envp));
+	int i = -1;
+	while(data->envp[++i])
+			printf("%s \n", data->envp[i]);
 	return (-1);
 }
 

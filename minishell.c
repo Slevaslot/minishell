@@ -6,7 +6,7 @@
 /*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:48:01 by slevaslo          #+#    #+#             */
-/*   Updated: 2023/05/11 19:33:28 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/16 18:52:25 by slevaslo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void	prompt()
 {
 	int i;
 	// char *str;
-	char buf[1000];
+	char buf[100];
 
 	getcwd(buf, sizeof(buf));
 	i = ft_strlen(buf);
@@ -151,7 +151,7 @@ void	prompt()
 int	main(int ac, char **av, char **envp)
 {
 	t_data	data;
-	char buf[1000];
+	char buf[100];
 	(void)ac;
 	(void)av;
 	ft_memset(&data, 0, sizeof(t_data));
@@ -161,17 +161,13 @@ int	main(int ac, char **av, char **envp)
 	while(1)
 	{
 		data.line = readline(buf);
-		if (data.line == NULL)
-			break ;
 		if (!strncmp(data.line, "exit", 5))
 		{
 			return (0);
 		}
-		// if (builtins(line, &data) != -1 )
-		// 	printf("builtused");
 		if (check_line(data.line) == 1)
 			printf("Error check_line.\n");
-		else if (data.line != NULL && is_builtins(data.line, &data) == -1)
+		else if (data.line[0] != '\0' && is_builtins(data.line, &data) == -1)
 		{
 			// if (parsing(&data, line) == 0)
 			exec_process(&data, data.line);
