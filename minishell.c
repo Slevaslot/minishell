@@ -209,7 +209,6 @@ void	process(t_data *data)
 			exec_process1(data, cmds[i], data->envp);
 		}
 		close_fd(&data->pipes[1]);
-		close_fd(&data->prev);
 		data->prev = data->pipes[0];
 		// close_fd(&data->pipes[0]);
 		// if (i == 0 && data->is_here_doc == 1)
