@@ -12,6 +12,30 @@
 
 #include "minishell.h"
 
+int		word_count(char *s, char c)
+{
+	int	i;
+	int	wc;
+	int	found;
+
+	i = -1;
+	wc = 1;
+	found = 1;
+
+	while (s[++i])
+	{
+		if (s[i] == c)
+			found = 0;
+		else
+		{
+			if (found == 0)
+				wc++;
+			found = 1;
+		}
+	}
+	return (wc);
+}
+
 void	close_fd(int *fd)
 {
 	if (*fd < 0)
@@ -22,7 +46,7 @@ void	close_fd(int *fd)
 
 void	second_part_dupnclose(int i, t_data *data)
 {
-	if (i == data->cmds)
+	if (i >= data->cmds - 1)
 	{
 		// data->fd_out = open(data->fd_ch, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 		// if (data->fd_out == -1)
@@ -32,8 +56,8 @@ void	second_part_dupnclose(int i, t_data *data)
 		// }
 		dup2(data->prev, STDIN_FILENO);
 		close_fd(&data->prev);
-		dup2(data->fd_out, STDOUT_FILENO);
-		close_fd(&data->fd_out);
+		// dup2(data->fd_out, STDOUT_FILENO);
+		// close_fd(&data->fd_out);
 	}
 	else
 	{

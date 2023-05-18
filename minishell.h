@@ -25,6 +25,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <sys/ioctl.h>
+#include <signal.h>
 
 typedef struct data
 {
@@ -40,6 +41,7 @@ typedef struct data
 	char	*fd_in_ch;
 	char **envp;
 	char	*line;
+	char **historic;
 }t_data;
 
 void	exec_process(t_data *data, char *str);
@@ -48,12 +50,13 @@ void	error(t_data *data);
 void	ft_freetab(char **str);
 char	*find_path(char *cmd, t_data *data);
 char	*path_is_ok(char **paths, char *cmd);
-void	process(char *prompt, t_data *data);
+void	process(t_data *data);
 char	*ft_strjoin(char const *s1, char const *s2);
 void	here_doc(char *argv, t_data *data);
 void	second_part_dupnclose(int i, t_data *data);
 void	close_fd(int *fd);
 int check_line(char *line);
+int		word_count(char *s, char c);
 //builtins
 int	my_env(t_data *data);
 int	my_cd(t_data *data);
