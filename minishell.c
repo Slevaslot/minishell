@@ -242,6 +242,7 @@ int	main(int ac, char **av, char **envp)
 	while(1)
 	{
 		data.line = readline(buf);
+		add_history(data.line);
 		data.cmds = word_count(data.line, '|');
 		printf("nmbre de cmds >> %d ", data.cmds);
 		data.historic[i] = data.line;
