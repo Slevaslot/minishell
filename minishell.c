@@ -244,7 +244,6 @@ int	main(int ac, char **av, char **envp)
 		data.line = readline(buf);
 		add_history(data.line);
 		data.cmds = word_count(data.line, '|');
-		printf("nmbre de cmds >> %d ", data.cmds);
 		data.historic[i] = data.line;
 		if (!strncmp(data.line, "exit", 5))
 		{
@@ -259,7 +258,6 @@ int	main(int ac, char **av, char **envp)
 			else
 				exec_process(&data, data.line);
 		}
-		printf("cmd >> %s", data.historic[i]);
 		i++;
 		prompt();
 	}
