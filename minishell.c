@@ -238,7 +238,6 @@ int	main(int ac, char **av, char **envp)
 	data.pid = malloc(sizeof(int) * data.cmds);
 	data.historic = malloc(sizeof(char *) * 10);
 	prompt();
-	printf("%d", data.cmds);
 	while(1)
 	{
 		data.line = readline(buf);
