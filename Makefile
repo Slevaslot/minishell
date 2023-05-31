@@ -22,10 +22,11 @@ ${PROG}:	${OBJS}
 					@echo "\nMinishell compiled!\n"
 
 clean:
-
+					$(MAKE) clean -C libft/
 					@rm -f ${OBJS} ${OBJS_B}
 
 fclean: 	clean
+					$(MAKE) fclean -C libft/
 					@rm -f $(NAME)
 					@rm -f ${PROG} ${PROG_B}
 					@echo "\nDelete ALL!\n"
