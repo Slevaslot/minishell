@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:03:28 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/14 18:04:09 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:57:58 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-// #include <ctype.h>
-// #include <stdio.h>
-// int main()
-// {
-//     int c;
-//     c = 'a';
-//     printf("%d\n", ft_isalpha(c));
-//     printf("%d\n", isalpha(c));
-// }

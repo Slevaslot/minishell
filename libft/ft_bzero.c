@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:55:26 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/18 19:20:14 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:57:41 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,3 @@ void	ft_bzero(void *ptr, size_t count)
 		i++;
 	}
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char	*str;
-// 	str = malloc(sizeof(char) * 5);
-// 	ft_strlcpy(str, "hey", 5);
-// 	ft_bzero(str, 4);
-// 	int	i;
-// 	i = 0;
-// 	while(str[i])
-// 	{
-// 		printf("%s", str);
-// 		i++;
-// 	}
-// }

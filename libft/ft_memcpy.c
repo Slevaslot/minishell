@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:15:01 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/18 19:05:05 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:59:57 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,3 @@ void	*ft_memcpy(void *destination, const void *source, size_t size )
 	}
 	return (destination);
 }
-/*
-int main()
- {
-        char str[] = "okadw]a";
-
-        char str1[] = "yoyoyoy";
-        ft_memcpy(str, str1, 4);
-        printf("%s\n", str);
-        printf("%s", str1);
-
- }
- */

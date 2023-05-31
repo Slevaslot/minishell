@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:00:54 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 12:08:14 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:59:19 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (result);
 }
-
-/*
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
-{
-	t_list*	l;
-	l = malloc(sizeof(void*)*ft_lstsize(lst));
-	while(lst)
-	{
-		l = lst;
-		l = l->next;
-		(f)(lst->content);
-		lst = lst->next;
-		if (!lst)
-			del(lst);
-
-	}
-	return
-}
-*/

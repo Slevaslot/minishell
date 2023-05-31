@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:51:27 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 11:54:56 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:00:01 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*
-int main()
- {
-        char str[] = "";
-        char str1[] = "yoyoyoy";
-        ft_memcpy(str, str1, 4);
-        printf("%s", str);
- }
- */

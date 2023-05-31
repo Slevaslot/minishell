@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:37:57 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 19:16:21 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:00:29 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,3 @@ char	**ft_split(char const *s, char c)
 	str[j] = 0;
 	return (str);
 }
-
-// int	main()
-// {
-// 	// ft_split("  d dj dk", ' ');
-// 	char **ret = ft_split(NULL, ' ');
-// 	(void)ret;
-// 	// printf("---> (%s)", ret[0]);
-// }

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:26:56 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 12:11:26 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:59:13 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -21,12 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-/*
-int main()
-{
-    t_list *l1 = ft_lstnew("HEYY");
-    t_list *l2 = ft_lstnew("YOOO");
-    printf("%s", (char*)ft_lstlast(l1));
-    return 0;
-}
-*/

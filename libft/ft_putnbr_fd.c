@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:30:26 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 12:53:20 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:00:21 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,3 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_putnbr_fd (nb % 10, fd);
 	}
 }
-/*
-int main ()
-{
-	ft_putnbr_fd(12345, 5);
-}
-*/

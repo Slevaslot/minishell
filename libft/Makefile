@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+         #
+#    By: mblal <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 17:54:35 by slevaslo          #+#    #+#              #
-#    Updated: 2023/04/13 15:55:07 by slevaslo         ###   ########.fr        #
+#    Updated: 2023/05/31 16:55:57 by mblal            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ OBJSBONUS	= ${SRCSBONUS:.c=.o}
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror(t_data *data)
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 all: ${NAME}

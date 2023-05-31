@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:54:39 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 11:50:06 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:57:47 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 	ft_bzero(ptr, h);
 	return (ptr);
 }
-// int main()
-// {
-// 	char*	str;
-
-// 	str = ft_calloc(3,6);
-// 	ft_strlcpy(str, "32", 6);
-// 	printf("%s", str);
-// }

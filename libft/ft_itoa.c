@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:37:02 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 12:07:52 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:58:18 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,3 @@ char	*ft_itoa(int n)
 	itoa_formule (n, i, j, str);
 	return (str);
 }
-/*
-int main()
-{
-	int	n;
-	n = 3435;
-	printf("%s", ft_itoa(n));
-	//printf("%s", itoa(n));
-}
-
-strdup ici //alloue etPrmtAUneChaine d'occ la mem
-*/

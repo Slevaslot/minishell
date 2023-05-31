@@ -3,25 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:16:17 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/18 20:40:02 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:01:17 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-char	ft_toupper(unsigned int d, char h)
-{
-	(void) d;
-	if (h >= 'a' && h <= 'z')
-	{
-		return (h - 32);
-	}
-	return (h);
-}
-*/
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
@@ -41,8 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	printf("%s",ft_strmapi("hey", ft_toupper));
-// }

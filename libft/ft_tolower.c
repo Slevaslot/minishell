@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 10:53:27 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 13:35:38 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:02:05 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,3 @@ int	ft_tolower(int ch)
 	}
 	return (ch);
 }
-/*
-int main()
-{
-    printf("%c", ft_tolower('a'));
-}
-*/

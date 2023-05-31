@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:43:50 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/14 19:38:27 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:01:09 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,3 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
-// #include <ctype.h>
-// #include <stdio.h>
-//  int main()
-// {
-//      char str[] = "hdgwadh";
-//         printf("%d", ft_strlen(str));
-// }

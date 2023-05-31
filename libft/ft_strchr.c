@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:08:48 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 12:53:28 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:00:34 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,3 @@ char	*ft_strchr( const char *string, int searchedChar )
 		return (NULL);
 	return (&str[i]);
 }
-/*
-int main()
-{
-     char str[] = "hdgwadh";
-     int hey = 'g';
-        printf("%s", ft_strchr(str, hey));
-}
-*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:38:28 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/20 11:51:25 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:01:24 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-    char first[] = "bonjour je suis";
-    char second[] = "je ";
-    //ft_strnstr(first, second, 2);
-    printf("%s", ft_strnstr(first, second, 5));
-    return(0);
-}
-*/

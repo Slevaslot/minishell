@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slevaslo <slevaslo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mblal <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:43:29 by slevaslo          #+#    #+#             */
-/*   Updated: 2022/11/15 17:53:02 by slevaslo         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:57:36 by mblal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-// #include <stdio.h>
-
-// int main(int argc, char **argv)
-// {
-//     printf("%d",ft_atoi(argv[1]));
-// }
